@@ -1,0 +1,171 @@
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    margin-bottom: 5px;
+
+}
+
+.link-logo {
+    text-decoration: none;
+
+}
+
+.logo {
+    margin-right: 16px;
+    margin-left: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: 800;
+    height: 100%;
+
+    font-size: 36px;
+
+}
+
+.menu {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 2;
+
+}
+
+li {
+    list-style: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    padding: 8px;
+
+    border-bottom: solid 4px #04CCFC;
+
+}
+
+li:hover {
+    background-color: #04CCFC;
+}
+
+.menu-item {
+
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.menu-btn {
+    display: none;
+}
+
+@media only screen and (max-width: 665px) {
+    header {
+        padding: 0%;
+        flex-direction: column;
+        height: 55px;
+        background: #1c1c1c
+    }
+
+    header > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .link-logo {
+        
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .menu {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        position: fixed;
+        z-index: 999;
+        height: 100vh;
+        width: 100%;
+        top: 65px;
+
+        background: #f953c6;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #b91d73, #f953c6);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #b91d73, #f953c6);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        transform: translate(0,0);
+
+        transition: transform 0.3s ease-out 0s;
+
+    }
+
+    .menu.hidden{
+        transform: translate(0,200%);
+    }
+
+
+    li {
+
+        border-bottom: none;
+        padding: 0;
+        height: auto;
+
+    }
+
+    li:hover{
+        background-color: transparent;
+    }
+
+    .menu-item {
+
+        font-size: 22px;
+
+    }
+
+    .menu-btn {
+        display: block;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        margin-right: 24px;
+
+    }
+
+    .menu-icon{
+        position: absolute;
+        right: 8px;
+        top: 10px;
+        transition: transform 0.3s ease-out 0s, opacity 0.3s ease-out 0s;
+    }
+
+
+    .menu-icon.bars.hidden {
+        transform: rotate(90deg);
+        opacity: 0;
+    }
+
+
+    .menu-icon.X.hidden {
+        transform: rotate(-90deg);
+        opacity: 0;
+    }
+
+
+
+}
+
