@@ -30,7 +30,6 @@ function App() {
             <Route path='/search/:search' element={<SearchPage/>} />
           </Routes>
         </BrowserRouter>
-
       </div>
 
     </div>
