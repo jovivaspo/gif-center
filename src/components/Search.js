@@ -5,10 +5,11 @@ import { endpoints } from '../services/endpoints'
 import { fetchData } from '../services/fetchData'
 import './Search.css'
 
-const Search = ({search, setSearch, setGifs, gifs}) => {
+const Search = ({search, setSearch}) => {
 const  navigate  = useNavigate()
 
     const handleSearch = (e) => {
+        console.log(search)
         e.preventDefault()
         if(search === "") return false
 
@@ -18,9 +19,8 @@ const  navigate  = useNavigate()
                 alert(res.message)
                 return false
            }
-          
-           navigate(`/search/${search}`)
-           setGifs(res)
+           console.log(res)
+           navigate(`/search/${search}`) 
         })
 
         
@@ -29,23 +29,22 @@ const  navigate  = useNavigate()
     const handleClose = (e) => {
         e.preventDefault()
         setSearch("")
-        setGifs(null)
         navigate("/")
     }
   
   return (
     <div className='search-container'>
-        <form className='search-form' onSubmit={handleSearch}>
+        <form className='search-form' >
             <input className='search-input'
              type="text" placeholder='Search Gifs and Stickers'
              value={search}
              onChange={(e)=>setSearch(e.target.value)}/>
-            { search && gifs && <button className='search-close' onClick={handleClose}>
-                <IoMdCloseCircleOutline color='#fff' size={22}/>
-            </button>}
-            <button className='search-btn' type="submit" onSubmit={handleSearch}>
+              <button className='search-btn' onClick={handleSearch}>
                 <BsSearch color='#fff' size={20}/>
             </button>
+            { search && <button className='search-close' onClick={handleClose}>
+                <IoMdCloseCircleOutline color='#fff' size={22}/>
+            </button>}
         </form>
     </div>
   )

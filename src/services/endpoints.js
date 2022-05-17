@@ -13,7 +13,6 @@ const URL_SERCH_STICKERS=`${API_URL_STICKERS}/search?q=`
 const CATEGORY_TREDING_STICKERS=`${API_URL_STICKERS}/trending`
 const URL_TREDING_STICKERS=`${CATEGORY_TREDING_STICKERS}?api_key=${API_KEY}&limit=${30}&rating=g`
 
-
 export const endpoints = {
     API_KEY,
     API_URL_GIFS,
@@ -25,5 +24,6 @@ export const endpoints = {
     CATEGORY_TREDING_STICKERS,
     URL_TREDING_STICKERS,
     URL_SERCH_STICKERS,
-    MY_KEY
+    MY_KEY,
+   
 }

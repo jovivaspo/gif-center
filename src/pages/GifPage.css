@@ -1,0 +1,54 @@
+.container{
+    width: 100%;
+   
+    padding: 10px;
+    color: #fff;
+}
+
+.container_img{
+    margin-bottom: 20px;
+}
+
+.img_main{
+    display: block;
+    margin: 0 auto;
+}
+
+.container_info{
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    
+}
+
+.img_info{
+
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+
+p{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.container_icon{
+
+    position: absolute;
+    right: 5px;
+    top:20px
+
+}
+
