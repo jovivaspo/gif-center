@@ -12,6 +12,7 @@
 .img_main{
     display: block;
     margin: 0 auto;
+    max-width: 600px
 }
 
 .container_info{
@@ -51,4 +52,31 @@ p{
     top:20px
 
 }
+
+@media only screen and (max-width: 500px) {
+    .img_main{
+       
+        max-width: 380px
+    }
+
+    .img_info{
+
+        height: 50px;
+        max-width: 80px;
+        margin-right: 5px;
+    }
+
+    p{
+        font-size: 10px;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .img_main{
+       
+       width: 100%;
+    }
+}
+
 
