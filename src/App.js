@@ -12,7 +12,7 @@ import { useContext } from 'react';
 import { SearchContext } from './context/SearchContext';
 import { GifsContext } from './context/GifsContext';
 import SearchPage from './pages/SearchPage';
-import GifPage from './pages/GifPage';
+import ItemPage from './pages/ItemPage'
 
 function App() {
 
@@ -27,9 +27,9 @@ function App() {
           <Search search={search} setSearch={setSearch} setGifs={setGifs} gifs={gifs}/>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/gif/:id' element={<GifPage/>}/>
-            <Route path='/sticker/:id' element={<GifPage/>} />
-            <Route path='/emoji/:id' element={<GifPage/>} />
+            <Route path='/gif/:id' element={<ItemPage/>}/>
+            <Route path='/sticker/:id' element={<ItemPage/>} />
+            <Route path='/emoji/:id' element={<ItemPage/>} />
             <Route path='/reactions' element={<Reactions />} />
             <Route path='/search/:search' element={<SearchPage/>} />
           </Routes>

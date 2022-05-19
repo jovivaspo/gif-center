@@ -14,6 +14,7 @@ const CATEGORY_TREDING_STICKERS=`${API_URL_STICKERS}/trending`
 const URL_TREDING_STICKERS=`${CATEGORY_TREDING_STICKERS}?api_key=${API_KEY}&limit=${30}&rating=g`
 
 const URL_TAG_TERM = "https://api.giphy.com/v1/tags/related"
+const URL_TRENDING_TERM = "https://api.giphy.com/v1/trending/searches"
 
 export const endpoints = {
     API_KEY,
@@ -27,5 +28,6 @@ export const endpoints = {
     URL_TREDING_STICKERS,
     URL_SERCH_STICKERS,
     MY_KEY,
-    URL_TAG_TERM
+    URL_TAG_TERM,
+    URL_TRENDING_TERM
 }

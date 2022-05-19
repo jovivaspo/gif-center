@@ -1,0 +1,32 @@
+import React from 'react'
+import { SiTelegram } from 'react-icons/si'
+import './Item.css'
+
+const Item = ({content}) => {
+    
+  return (
+    <div className='container'>
+    <div className='container_img'>
+        <img className="img_main"
+            src={content?.images.downsized_medium.url}
+            alt={content?.title} />
+    </div>
+    <div className='container_info'>
+        <img className="img_info"
+            src={content?.images.fixed_width_small.webp}
+        />
+        <div className="text">
+            <p>{content?.title}</p>
+            <p>{content?.user.display_name}</p>
+        </div>
+        <div className='container_icon'>
+            <SiTelegram size={32} />
+        </div>
+    </div>
+</div>
+  )
+}
+
+
+
+export default Item
