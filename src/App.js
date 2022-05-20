@@ -27,9 +27,9 @@ function App() {
           <Search search={search} setSearch={setSearch} setGifs={setGifs} gifs={gifs}/>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/gif/:id' element={<ItemPage/>}/>
-            <Route path='/sticker/:id' element={<ItemPage/>} />
-            <Route path='/emoji/:id' element={<ItemPage/>} />
+            <Route path='/gif/:slug' element={<ItemPage/>}/>
+            <Route path='/sticker/:slug' element={<ItemPage/>} />
+            <Route path='/emoji/:slug' element={<ItemPage/>} />
             <Route path='/reactions' element={<Reactions />} />
             <Route path='/search/:search' element={<SearchPage/>} />
           </Routes>

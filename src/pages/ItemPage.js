@@ -1,37 +1,23 @@
-import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { fetchData } from '../services/fetchData'
 import { endpoints } from '../services/endpoints'
 import Item from '../components/Item'
 import BarTags from '../components/BarTags'
 
 
 const ItemPage = () => {
-    const [content, setContent] = useState(null)
-    const [tags, setTags] = useState(null)
   
-    const { id } = useParams()
+    const { slug } = useParams()
+    const id = slug.slice(-18)
+    const term = slug.split("-")[0]
 
-    useEffect(() => {
-        const uri_gif = endpoints.API_URL_GIFS + `/${id}${endpoints.MY_KEY}`
-        const loadContent = async () => {
-           fetchData(uri_gif)
-           .then(res=>{
-               setContent(res.data)
-               const uri_term = endpoints.URL_TAG_TERM +  `/${res.data.title}${endpoints.MY_KEY}`
-               fetchData(uri_term)
-               .then(res=>setTags(res.data))
-            })
-        }
 
-        loadContent()
-
-    }, [])
+    const uri_gif = endpoints.API_URL_GIFS + `/${id}${endpoints.MY_KEY}`
+    const uri_term_related = endpoints.URL_TAG_TERM + `/${term}${endpoints.MY_KEY}`
 
     return (
         <>
-         {content && <Item content={content}/>}
-         {tags && <BarTags tags={tags} title={"Related Terms"}/>}
+         {<Item url={uri_gif}/>}
+         {<BarTags  title={"Related Terms"} url={uri_term_related}/>}
         </>
        
     )

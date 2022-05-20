@@ -25,6 +25,8 @@
     border-radius: 9999px;
     margin: 8px 8px;
     padding: 8px;
+    display: flex;
+    align-items: center;
 }
 
 .tag {

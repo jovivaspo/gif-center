@@ -12,7 +12,8 @@
 .img_main{
     display: block;
     margin: 0 auto;
-    max-width: 600px
+    max-width: 600px;
+    border-radius: 8px;
 }
 
 .container_info{
@@ -32,6 +33,7 @@
     height: 50px;
     width: auto;
     margin-right: 10px;
+    border-radius: 4px;
 }
 
 .text{

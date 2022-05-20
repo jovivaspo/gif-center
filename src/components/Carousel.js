@@ -5,7 +5,7 @@ import { BsChevronRight } from 'react-icons/bs'
 import { BsChevronLeft } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
-const Carousel = ({ title, url, link }) => {
+const Carousel = ({ title, url }) => {
     const [content, setContent] = useState([])
     const refCarousel = useRef()
 
@@ -38,7 +38,6 @@ const Carousel = ({ title, url, link }) => {
         }
     }
 
-    
 
     return (
         <div className='carousel-container'>
@@ -48,7 +47,8 @@ const Carousel = ({ title, url, link }) => {
                 <div className='right-icon' onClick={handleClick}> <BsChevronRight size={24} color="#fff" /></div>
                 {content && <div className='content-container' ref={refCarousel}>
                     {content.map((el, index) => {
-                        return <Link to={`/${el.type}/${el.id}`} key={index} > <img className="img" src={el.images.fixed_height_small.webp || el.images.fixed_height_small.url} alt={el.title} /></Link>
+                        return <Link to={`/${el.type}/${el.slug}`} key={index} >
+                             <img loading="lazy" className="img" src={el.images.fixed_height_small.webp || el.images.fixed_height_small.url} alt={el.title} /></Link>
                     })}
                 </div>
                 }
