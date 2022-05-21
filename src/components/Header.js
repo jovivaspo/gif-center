@@ -36,11 +36,11 @@ const Header = () => {
                
             </div>
             <nav className='menu hidden' ref={menuRef}>
-                <li><Link className='menu-item' to="/reactions">Reactions</Link></li>
-                <li><Link className='menu-item' to="/reactions">Entertainment</Link></li>
-                <li><Link className='menu-item' to="/reactions">Sports</Link></li>
-                <li><Link className='menu-item' to="/reactions">Stickers</Link></li>
-                <li><Link className='menu-item' to="/reactions">Artist</Link></li>
+                <li onClick={handleClick}><Link className='menu-item' to="/search/reactions">Reactions</Link></li>
+                <li onClick={handleClick}><Link className='menu-item' to="/search/entertaiment">Entertainment</Link></li>
+                <li onClick={handleClick}><Link className='menu-item' to="/search/sports">Sports</Link></li>
+                <li onClick={handleClick}><Link className='menu-item' to="/search/stickers">Stickers</Link></li>
+                <li onClick={handleClick}><Link className='menu-item' to="/search/artists">Artist</Link></li>
             </nav>
 
         </header>

@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext,useRef } from 'react'
 import { SiTelegram } from 'react-icons/si'
+import { LoadingContext } from '../context/LoadingContext'
 import { fetchData } from '../services/fetchData'
+import { useObserver } from '../services/useObserver'
 import './Item.css'
 
 const Item = ({ url }) => {
@@ -8,17 +10,16 @@ const Item = ({ url }) => {
     const [content, setContent] = useState(null)
 
     useEffect(() => {
-
         const loadContent = (url) => {
             fetchData(url)
                 .then(res => {
                     setContent(res.data)
                 })
         }
-
         loadContent(url)
 
     }, [])
+
 
     return (
         <div className='container'>
@@ -35,7 +36,7 @@ const Item = ({ url }) => {
                 />
                 <div className="text">
                     <p>{content?.title}</p>
-                    <p>{content?.user.display_name}</p>
+                    <p>{content?.user? content?.user.display_name :  ""}</p>
                 </div>
                 <div className='container_icon'>
                     <SiTelegram size={32} />

@@ -3,7 +3,8 @@ import { createContext, useState } from "react";
 const SearchContext = createContext()
 
 const SearchProvider = ({children}) =>{
-    const [search, setSearch] = useState('')
+    const searchStorage = localStorage.getItem("searchGif")? localStorage.getItem("searchGif")  : ""
+    const [search, setSearch] = useState(searchStorage)
 
     const data = {search, setSearch}
 

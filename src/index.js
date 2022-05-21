@@ -3,16 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { SearchProvider } from './context/SearchContext';
-import { GifsProvider } from './context/GifsContext';
+import { LoadingProvider } from './context/LoadingContext';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <SearchProvider>
-      <GifsProvider>
-        <App />
-      </GifsProvider>
+      <LoadingProvider>
+      <App />
+      </LoadingProvider>
     </SearchProvider>
   </React.StrictMode>
 );

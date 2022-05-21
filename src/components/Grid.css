@@ -51,6 +51,18 @@
    
 }
 
+.next_page{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px;
+  margin-top: 15px;
+  background-color:  #04CCFC;
+  border-radius: 8px;
+
+}
+
 @media screen and (min-width: 37.5rem) {
     :root {
       --gridList-column: 180px;

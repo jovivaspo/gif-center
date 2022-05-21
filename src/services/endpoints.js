@@ -3,7 +3,7 @@ const API_KEY = process.env.REACT_APP_API_KEY
 const API_URL_GIFS='https://api.giphy.com/v1/gifs'
 const CATEGORY_TREDING=`${API_URL_GIFS}/trending`
 const N_OBJECT='30'
-const URL_TREDING_GIFS=`${CATEGORY_TREDING}?api_key=${API_KEY}&limit=${30}&rating=g`
+const URL_TREDING_GIFS=`${CATEGORY_TREDING}?api_key=${API_KEY}&limit=${N_OBJECT}&rating=g`
 
 const MY_KEY = `?api_key=${API_KEY}`
 const URL_SERCH_GIFS=`${API_URL_GIFS}/search?q=`

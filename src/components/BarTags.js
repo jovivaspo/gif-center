@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import "./BarTags.css"
 import { fetchData } from '../services/fetchData'
+import { Link } from 'react-router-dom'
 
 const BarTags = ({ title, url }) => {
 
@@ -23,9 +24,9 @@ const BarTags = ({ title, url }) => {
             <div className='bar_tags'>
                 {tags && tags.map((tag, index) => {
                     return (
-                        <div key={index} className="container_tag">
+                        <Link to={`/search/${tag.name || tag}`} key={index} className="container_tag">
                             <span className='tag'>#{tag.name?.replace(/ /g, "") || tag.replace(/ /g, "")}</span>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>

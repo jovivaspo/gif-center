@@ -7,7 +7,7 @@ import BarTags from '../components/BarTags'
 const ItemPage = () => {
   
     const { slug } = useParams()
-    const id = slug.slice(-18)
+    const id = slug.split("-").pop()
     const term = slug.split("-")[0]
 
 

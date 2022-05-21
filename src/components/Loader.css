@@ -1,0 +1,66 @@
+.loader_container{
+    
+    display: flex;
+    justify-content: space-around;
+
+    margin: 0 auto;
+    width: 150px;
+    margin-top: 60px;
+}
+.blue{
+    background-color: rgb(0, 204, 255);
+    width: 16px;
+    height: 16px;
+}
+.red{
+    background-color: rgb(255, 102, 102);
+    width: 16px;
+    height: 16px;
+}
+.green{
+    background-color: rgb(0, 255, 153);
+    width: 16px;
+    height: 16px;
+}
+.yellow{
+    background-color: rgb(255, 243, 92);
+    width: 16px;
+    height: 16px;
+
+}
+.pink{
+    background-color: rgb(153, 51, 255);
+    width: 16px;
+    height: 16px;
+
+}
+
+.loader_container div {
+    animation: 0.75s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s infinite
+		alternate none running bouncer
+}
+
+.loader_container div:nth-child(1) {
+    animation-delay: calc(0.1s);
+  
+}
+.loader_container div:nth-child(2) {
+    animation-delay: calc(0.2s);
+}
+.loader_container div:nth-child(3) {
+    animation-delay: calc(0.3s);
+}
+.loader_container div:nth-child(4) {
+    animation-delay: calc(0.4s);
+}
+.loader_container div:nth-child(5) {
+    animation-delay: calc(0.5s);
+}
+
+
+
+@keyframes bouncer {
+	100% {
+		transform: scale(1.75) translateY(-20px);
+	}
+}
