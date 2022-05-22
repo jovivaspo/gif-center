@@ -28,10 +28,10 @@ function App() {
           <Search setSearch={setSearch} />
             <Routes>
               <Route path='/gif-center/' element={<Home />} />
-                <Route path='/gif/:slug' element={<ItemPage />} />
-                <Route path='/sticker/:slug' element={<ItemPage />} />
-                <Route path='/emoji/:slug' element={<ItemPage />} />
-                <Route path='/search/:search' element={<SearchPage />} />
+                <Route path='/gif-center/gif/:slug' element={<ItemPage />} />
+                <Route path='/gif-center/sticker/:slug' element={<ItemPage />} />
+                <Route path='/gif-center/emoji/:slug' element={<ItemPage />} />
+                <Route path='/gif-center/search/:search' element={<SearchPage />} />
             </Routes>
         </BrowserRouter>
       </div>

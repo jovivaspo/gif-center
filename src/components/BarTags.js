@@ -24,7 +24,7 @@ const BarTags = ({ title, url }) => {
             <div className='bar_tags'>
                 {tags && tags.map((tag, index) => {
                     return (
-                        <Link to={`/search/${tag.name || tag}`} key={index} className="container_tag">
+                        <Link to={`/gif-center/search/${tag.name || tag}`} key={index} className="container_tag">
                             <span className='tag'>#{tag.name?.replace(/ /g, "") || tag.replace(/ /g, "")}</span>
                         </Link>
                     )

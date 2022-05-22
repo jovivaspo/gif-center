@@ -47,7 +47,7 @@ const Carousel = ({ title, url }) => {
                 <div className='right-icon' onClick={handleClick}> <BsChevronRight size={24} color="#fff" /></div>
                 {content && <div className='content-container' ref={refCarousel}>
                     {content.map((el, index) => {
-                        return <Link to={`/${el.type}/${el.slug}`} key={index} >
+                        return <Link to={`/gif-center/${el.type}/${el.slug}`} key={index} >
                              <img loading="lazy" className="img" src={el.images.fixed_height_small.webp || el.images.fixed_height_small.url} alt={el.title} /></Link>
                     })}
                 </div>

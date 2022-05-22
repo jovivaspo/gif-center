@@ -62,7 +62,7 @@ const Grid = ({ url, title }) => {
           {items.map((item, index) => {
             return (
               <div  key={index} className="container_item">
-                <Link to={`/${item.type}/${item.slug}`} className="item_link">
+                <Link to={`/gif-center/${item.type}/${item.slug}`} className="item_link">
                   <img loading="lazy" src={item.images.preview_webp.url || ""} alt={item.title} className="img_item" />
                 </Link>
               </div>
