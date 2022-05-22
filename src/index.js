@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { SearchProvider } from './context/SearchContext';
 import { LoadingProvider } from './context/LoadingContext';
+import { SelectProvider } from './context/SelectContext';
 
 
 
@@ -12,7 +13,9 @@ root.render(
   <React.StrictMode>
     <SearchProvider>
       <LoadingProvider>
-      <App />
+        <SelectProvider>
+        <App />
+        </SelectProvider>
       </LoadingProvider>
     </SearchProvider>
   </React.StrictMode>

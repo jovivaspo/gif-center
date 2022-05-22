@@ -1,8 +1,6 @@
-import { useState, useEffect, useContext,useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { SiTelegram } from 'react-icons/si'
-import { LoadingContext } from '../context/LoadingContext'
 import { fetchData } from '../services/fetchData'
-import { useObserver } from '../services/useObserver'
 import './Item.css'
 
 const Item = ({ url }) => {
@@ -20,6 +18,29 @@ const Item = ({ url }) => {
 
     }, [])
 
+    const handleShare = async () => {
+        try {
+            const type = content.type === 'sticker' || content.type === 'emoji' ? "webp" : content.type
+            const img = await fetch(`https://i.giphy.com/media/${content.id}/giphy.${type}`)
+            const blob = await img.blob()
+            const file = new File([blob], `${content.name}.${type}`, { type: blob.type, })
+            const dataShare = {
+                title: content.name,
+                text:content.name,
+                files: [file],
+            }
+            
+            if (navigator.canShare(dataShare)) {
+                await navigator.share(dataShare)
+            } else {
+                alert("Share API is not supported")
+            }
+
+        } catch (err) {
+            alert("Share API is not supported")
+            console.log(err)
+        }
+    }
 
     return (
         <div className='container'>
@@ -36,9 +57,10 @@ const Item = ({ url }) => {
                 />
                 <div className="text">
                     <p>{content?.title}</p>
-                    <p>{content?.user? content?.user.display_name :  ""}</p>
+                    <p>{content?.user ? content?.user.display_name : ""}</p>
                 </div>
-                <div className='container_icon'>
+                <div className='container_icon'
+                    onClick={handleShare}>
                     <SiTelegram size={32} />
                 </div>
             </div>

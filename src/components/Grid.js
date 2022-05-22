@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom'
 import { useObserver } from '../services/useObserver'
 import { endpoints } from '../services/endpoints'
 import { SearchContext } from '../context/SearchContext'
+import { SelectContext } from '../context/SelectContext'
 
 
 const Grid = ({ url, title }) => {
   const [items, setItems] = useState([])
   const [page, setPage] = useState(1)
   const {search} = useContext(SearchContext)
+  const {select} = useContext(SelectContext)
 
 
   const nextRef = useRef()
@@ -29,7 +31,7 @@ const Grid = ({ url, title }) => {
         })
     }
     loadContent(url)
-  }, [search])
+  }, [search,select])
 
   useEffect(() => {
     if (isVisible){
