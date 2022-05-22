@@ -30,14 +30,14 @@ const Item = ({ url }) => {
                 files: [file],
             }
             
-            if (navigator.canShare(dataShare)) {
+            if (navigator.share && navigator.canShare(dataShare)) {
                 await navigator.share(dataShare)
             } else {
                 alert("Share API is not supported")
             }
 
         } catch (err) {
-            alert("Share API is not supported")
+    
             console.log(err)
         }
     }
