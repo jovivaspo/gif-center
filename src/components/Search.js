@@ -14,13 +14,13 @@ const Search = () => {
         e.preventDefault()
         if (searchBar === "") return false
         localStorage.setItem("searchGif", searchBar)
-        navigate(`/search/${searchBar}`)
+        navigate(`/gif-center/search/${searchBar}`)
     }
 
     const handleClose = (e) => {
         e.preventDefault()
         setSearchBar("")
-        navigate("/")
+        navigate("/gif-center")
     }
 
     useEffect(()=>{
