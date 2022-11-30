@@ -1,4 +1,4 @@
-#GIF-CENTER
+# GIF-CENTER
 
 Gif center is a clone of giphy.com, this web application has been developed with React.js.
 
